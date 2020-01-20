@@ -18,6 +18,6 @@ jobs:
         # Personal Access Token in order to publish to GitHub Pages.
         token: ${{ secrets.hawei }}
         # Your name to include in the commit.
-        name: Hawei
+        name: ParseDark
         # Your email to include in the commit.
-        email: hawei@paypal.com
+        email: whd1073363531@qq.com
