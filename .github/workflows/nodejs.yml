@@ -16,7 +16,7 @@ jobs:
         # The branch that GitHub Pages is being exposed to.
         publishBranch: master
         # Personal Access Token in order to publish to GitHub Pages.
-        token: d7f92e4f4bb0927a4662a6d3a59ff7cb395ca65b
+        token: ${{ secrets.hawei }}
         # Your name to include in the commit.
         name: Hawei
         # Your email to include in the commit.
