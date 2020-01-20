@@ -1,26 +1,21 @@
-name: Node CI
-
-on: [push]
-
+name: GitHub Actions Build and Deploy Demo
+on:
+  push:
+    branches:
+      - master
 jobs:
-  build:
-
+  build-and-deploy:
     runs-on: ubuntu-latest
-
-    strategy:
-      matrix:
-        node-version: [8.x, 10.x, 12.x]
-
     steps:
-    - uses: actions/checkout@v1
-    - name: Use Node.js ${{ matrix.node-version }}
-      uses: actions/setup-node@v1
+    - name: Checkout
+      uses: actions/checkout@master
+
+    - name: Gatsby Publish
+      uses: enriikke/gatsby-gh-pages-action@v2.1.1
       with:
-        node-version: ${{ matrix.node-version }}
-    - name: npm install, build, and test
-      run: |
-        npm install
-        npm run clean
-        npm run build --if-present
-      env:
-        CI: true
+        # A personal access token needed to push your site after it has been built.
+        access-token: d7f92e4f4bb0927a4662a6d3a59ff7cb395ca65b
+        # The branch expected by GitHub to have the static files needed for your site.
+        deploy-branch: master
+        # Additional arguments that get passed to `gatsby build`.
+        gatsby-args: --prefix-paths 
