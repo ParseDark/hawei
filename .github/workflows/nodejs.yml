@@ -10,10 +10,14 @@ jobs:
     - name: Checkout
       uses: actions/checkout@master
 
-    - name: Build and Deploy
-      uses: JamesIves/github-pages-deploy-action@master
-      env:
-        ACCESS_TOKEN: d7f92e4f4bb0927a4662a6d3a59ff7cb395ca65b
-        BRANCH: gh-pages
-        FOLDER: build
-        BUILD_SCRIPT: npm install && npm run deploy
+    - name: Publish Gatsby Site
+      uses: xmflsct/action-publish-gatsby@v1.0.0
+      with:
+        # The branch that GitHub Pages is being exposed to.
+        publishBranch: master
+        # Personal Access Token in order to publish to GitHub Pages.
+        token: d7f92e4f4bb0927a4662a6d3a59ff7cb395ca65b
+        # Your name to include in the commit.
+        name: hawei
+        # Your email to include in the commit.
+        email: 1
