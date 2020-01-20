@@ -1,19 +1,26 @@
-name: GitHub Actions Build and Deploy Demo
-on:
-  push:
-    branches:
-      - master
-jobs:
-  build-and-deploy:
-    runs-on: ubuntu-latest
-    steps:
-    - name: Checkout
-      uses: actions/checkout@master
+name: Node CI
 
-    - name: Build and Deploy
-      uses: JamesIves/github-pages-deploy-action@master
+on: [push]
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    strategy:
+      matrix:
+        node-version: [8.x, 10.x, 12.x]
+
+    steps:
+    - uses: actions/checkout@v1
+    - name: Use Node.js ${{ matrix.node-version }}
+      uses: actions/setup-node@v1
+      with:
+        node-version: ${{ matrix.node-version }}
+        token: ${{ secrets.hawei }}
+    - name: npm install, build, and test
+      run: |
+        npm install
+        npm run deploy
       env:
-        ACCESS_TOKEN: d7f92e4f4bb0927a4662a6d3a59ff7cb395ca65b
-        BRANCH: gh-pages
-        FOLDER: build
-        BUILD_SCRIPT: npm install && npm run deploy
+        CI: true
