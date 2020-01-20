@@ -1,6 +1,10 @@
-name: Node CI
+name: Gatsby deploy
 
-on: [push]
+on:
+  push:
+    branches:
+      - master
+      - dev
 
 jobs:
   build:
@@ -18,8 +22,10 @@ jobs:
       with:
         node-version: ${{ matrix.node-version }}
     - name: npm install, build, and test
-      run: |
-        npm install
-        npm run deploy
       env:
         CI: true
+        ACCESS_TOKEN: d7f92e4f4bb0927a4662a6d3a59ff7cb395ca65b
+        BRANCH: gh-pages
+        FOLDER: build
+        BUILD_SCRIPT: npm install && npm run deploy
+        
