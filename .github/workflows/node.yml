@@ -1,15 +1,19 @@
-name: Gatsby Publish
-
+name: GitHub Actions Build and Deploy Demo
 on:
   push:
     branches:
       - master
-
 jobs:
-  build:
+  build-and-deploy:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v1
-      - uses: enriikke/gatsby-gh-pages-action@v2
-        with:
-          access-token: d7f92e4f4bb0927a4662a6d3a59ff7cb395ca65b
+    - name: Checkout
+      uses: actions/checkout@master
+
+    - name: Build and Deploy
+      uses: JamesIves/github-pages-deploy-action@master
+      env:
+        ACCESS_TOKEN: d7f92e4f4bb0927a4662a6d3a59ff7cb395ca65b
+        BRANCH: gh-pages
+        FOLDER: build
+        BUILD_SCRIPT: npm install && npm run build && mv .cache/ build
