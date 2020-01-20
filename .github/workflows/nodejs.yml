@@ -1,27 +1,3 @@
-name: GitHub Actions Build and Deploy Demo
-on:
-  push:
-    branches:
-      - master
-jobs:
-  build-and-deploy:
-    runs-on: ubuntu-latest
-    steps:
-    - name: Checkout
-      uses: actions/checkout@master
-
-    - name: Publish Gatsby Site
-      uses: xmflsct/action-publish-gatsby@v1.0.0
-      with:
-        # The branch that GitHub Pages is being exposed to.
-        publishBranch: master
-        # Personal Access Token in order to publish to GitHub Pages.
-        token: ${{ secrets.hawei }}
-        # Your name to include in the commit.
-        name: ParseDark
-        # Your email to include in the commit.
-        email: whd1073363531@qq.com
-
 name: Node CI
 
 on: [push]
