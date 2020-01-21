@@ -27,5 +27,5 @@ jobs:
         # A personal access token needed to push your site after it has been built.
         access-token: ParseDark:whd19941127
         # The branch expected by GitHub to have the static files needed for your site.
-        deploy-branch: prod
+        deploy-branch: gh-pages
         gatsby-args: --prefix-paths
