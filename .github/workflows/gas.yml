@@ -17,12 +17,13 @@ jobs:
       uses: actions/setup-node@v1
       with:
         node-version: ${{ matrix.node-version }}
+        token: ${{ secrets.ACCESS_TOKEN }}
     - name: npm install, build, and test
       run: |
         git config --global user.email "whd1073363531@qq.com"
         git config --global user.name "ParseDark"
         npm i
-        npm run deploy
+        export token=${{ secrets.ACCESS_TOKEN }} && npm run deploy
       env:
         CI: true
         token: ${{ secrets.ACCESS_TOKEN }}
