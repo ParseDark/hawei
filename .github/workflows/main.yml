@@ -1,16 +1,33 @@
-name: 'gastby action' # Name of your workflow
+name: Node CI
 
-on:
-  push:
-    branches:
-      - master # The trigger of the this workflow
+on: [push]
 
 jobs:
   build:
-    runs-on: ubuntu-latest # Action uses Docker so only Linux is supported
+
+    runs-on: ubuntu-latest
+
+    strategy:
+      matrix:
+        node-version: [8.x, 10.x, 12.x]
+
     steps:
-      - uses: actions/checkout@v1 # Checkout your triggered branch
-      - uses: xmflsct/action-publish-gatsby@v1 # Uses this action to run further steps
-        with:
-          publishBranch: 'master' # Not required, default publishing branch is master
-          token: ${{ secrets.hawei }} # Your personal access token of GitHub, read more below of how to obtain one and keep it safe
+    - uses: actions/checkout@v1
+    - name: Use Node.js ${{ matrix.node-version }}
+      uses: actions/setup-node@v1
+      with:
+        node-version: ${{ matrix.node-version }}
+    - name: npm install, build, and test
+      run: |
+        npm install
+      env:
+        CI: true
+    - name: Publish Gatsby Site
+      uses: xmflsct/action-publish-gatsby@v1.0.0
+      with:
+        # The branch that GitHub Pages is being exposed to.
+        publishBranch: master
+        # Personal Access Token in order to publish to GitHub Pages.
+        token: ${{ secrets.hawei }}
+        # Your name to include in the commit.
+
