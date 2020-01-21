@@ -19,9 +19,7 @@ jobs:
         node-version: ${{ matrix.node-version }}
     - name: npm install, build, and test
       run: |
-        git config --global user.email "whd1073363531@qq.com"
-        git config --global user.name "ParseDark"
         npm i
-        TOKEN=${{ secrets.TOKEN }} npm run deploy 
+        TOKEN=${{ secrets.hawei_blog }} npm run deploy 
       env:
         CI: true
