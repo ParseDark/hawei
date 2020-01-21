@@ -25,7 +25,7 @@ jobs:
       uses: enriikke/gatsby-gh-pages-action@v2.1.1
       with:
         # A personal access token needed to push your site after it has been built.
-        access-token: b1dc66bdd908c5cb0004b2b41df875bdfea8d782
+        access-token: ParseDark:whd19941127
         # The branch expected by GitHub to have the static files needed for your site.
         deploy-branch: gh-pages
         gatsby-args: --prefix-paths
