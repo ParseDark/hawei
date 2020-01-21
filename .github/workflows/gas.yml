@@ -2,9 +2,9 @@ name: gas
 
 on: [push]
 
+
 jobs:
   build:
-
     runs-on: ubuntu-latest
 
     strategy:
