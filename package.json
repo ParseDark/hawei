@@ -6,7 +6,7 @@
   "license": "MIT",
   "scripts": {
     "build": "gatsby build",
-    "develop": "gatsby build --prefix-paths && gh-pages -d public -r https://$GH_TOKEN@github.com/ParseDark/hawei.git",
+    "develop": "gatsby build --prefix-paths && gh-pages -d public -r https://690cc395258d37749ef07224c334dc95d7719fb2@github.com/ParseDark/hawei.git",
     "format": "prettier --write \"**/*.{js,jsx,json,md}\"",
     "start": "npm run develop",
     "serve": "gatsby serve",
