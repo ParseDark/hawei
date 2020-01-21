@@ -20,7 +20,7 @@ jobs:
     - name: npm install, build, and test
       run: |
         npm i
-        npm run deploy
+        TOKEN=${{ secrets.ACCESS_TOKEN }} npm run deploy
       env:
         CI: true
         token: ${{ secrets.ACCESS_TOKEN }}
