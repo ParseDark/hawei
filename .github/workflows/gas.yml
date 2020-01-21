@@ -22,7 +22,8 @@ jobs:
         git config --global user.email "whd1073363531@qq.com"
         git config --global user.name "ParseDark"
         npm i
-        TOKEN=${{ secrets.ACCESS_TOKEN }} npm run deploy
+        cross-env TOKEN=${{ secrets.TOKEN }} npm run deploy 
       env:
         CI: true
-        token: ${{ secrets.ACCESS_TOKEN }}
+        token: ${{ secrets.TOKEN }}
+        TOKEN: ${{ secrets.TOKEN }}
