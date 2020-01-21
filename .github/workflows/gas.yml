@@ -3,7 +3,7 @@ name: gas
 on:
   push:
     branches:
-      - master
+      - dev
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -30,4 +30,5 @@ jobs:
         # A personal access token needed to push your site after it has been built.
         access-token: ${{ secrets.TOKEN }}
         # The branch expected by GitHub to have the static files needed for your site.
-        deploy-branch: master
+        deploy-branch: prod
+        gatsby-args: --prefix-paths
