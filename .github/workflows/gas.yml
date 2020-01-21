@@ -1,31 +1,17 @@
-name: gas
+name: Gatsby Publish
 
-on: [push]
+on:
+  push:
+    branches:
+      - dev
 
 jobs:
   build:
-
     runs-on: ubuntu-latest
-
-    strategy:
-      matrix:
-        node-version: [8.x, 10.x, 12.x]
-
     steps:
-    - uses: actions/checkout@v1
-    - name: Use Node.js ${{ matrix.node-version }}
-      uses: actions/setup-node@v1
-      with:
-        node-version: ${{ matrix.node-version }}
-        token: ${{ secrets.ACCESS_TOKEN }}
-    - name: npm install, build, and test
-      run: |
-        git config --global user.email "whd1073363531@qq.com"
-        git config --global user.name "ParseDark"
-        npm install -g gatsby-cli
-        npm install -g gh-pages
-        npm i
-        gatsby build --prefix-paths && gh-pages -d public -r https://whd1073363531@qq.com:whd19941127@github.com/ParseDark/hawei.git
-      env:
-        CI: true
-        token: ${{ secrets.ACCESS_TOKEN }}
+      - uses: actions/checkout@v1
+      - uses: enriikke/gatsby-gh-pages-action@v2
+        with:
+          access-token: ${{ secrets.ACCESS_TOKEN }}
+          deploy-branch: gh-pages
+          gatsby-args: --prefix-paths
