@@ -25,5 +25,3 @@ jobs:
         cross-env TOKEN=${{ secrets.TOKEN }} npm run deploy 
       env:
         CI: true
-        token: ${{ secrets.TOKEN }}
-        TOKEN: ${{ secrets.TOKEN }}
