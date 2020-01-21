@@ -20,13 +20,10 @@ jobs:
         token: ${{ secrets.ACCESS_TOKEN }}
     - name: npm install, build, and test
       run: |
-        echo $token
         git config --global user.email "whd1073363531@qq.com"
         git config --global user.name "ParseDark"
         npm i
         export token=${{ secrets.ACCESS_TOKEN }} && npm run deploy
-        echo $token
-        echo https://$token@github.com/ParseDark/hawei.git
       env:
         CI: true
         token: ${{ secrets.ACCESS_TOKEN }}
