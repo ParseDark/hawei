@@ -24,6 +24,7 @@ jobs:
         publishBranch: master
         # Personal Access Token in order to publish to GitHub Pages.
         token: ${{ secrets.ACCESS_TOKEN }}
+        ACCESS_TOKEN: ${{ secrets.ACCESS_TOKEN }}
            # Your name to include in the commit.
         name: ParseDark
         # Your email to include in the commit.
