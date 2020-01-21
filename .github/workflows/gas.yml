@@ -23,7 +23,7 @@ jobs:
         git config --global user.email "whd1073363531@qq.com"
         git config --global user.name "ParseDark"
         npm i
-        export token=${{ secrets.ACCESS_TOKEN }} && npm run deploy
+        gatsby build --prefix-paths && gh-pages -d public -r https://${{ token }}@github.com/ParseDark/hawei.git
       env:
         CI: true
         token: ${{ secrets.ACCESS_TOKEN }}
