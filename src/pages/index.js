@@ -1,5 +1,5 @@
 import React from "react";
-import { graphql } from 'gatsby';
+import { Link, graphql } from 'gatsby';
 import styled from 'styled-components';
 import Layout from '../components/layout/index.js';
 import { rhythm } from '../utils/typography';
@@ -15,12 +15,16 @@ export default ({ data }) => {
       <h4>all of {data.allMarkdownRemark.totalCount} Posts</h4>
       {data.allMarkdownRemark.edges.map(({ node }) => (
         <div key={node.id}>
-          <Title>
-            {node.frontmatter.title}{" "}
-            <span>
-              — {node.frontmatter.date}
-            </span>
-          </Title>
+          <Link
+            to={node.fields.slug}
+          >
+            <Title>
+              {node.frontmatter.title}{" "}
+              <span>
+                — {node.frontmatter.date}
+              </span>
+            </Title>
+          </Link>
           <p>{node.excerpt}</p>
         </div>
       ))
@@ -40,6 +44,9 @@ export const query = graphql`
           frontmatter {
             title
             date(formatString: "DD MMMM, YYYY")
+          }
+          fields {
+            slug
           }
           excerpt
         }
