@@ -12,12 +12,20 @@
     "serve": "gatsby serve",
     "clean": "gatsby clean",
     "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\" && exit 1",
-     "deploy:local": "gatsby build --prefix-paths && gh-pages -d public"
+    "deploy:local": "gatsby build --prefix-paths && gh-pages -d public"
   },
   "dependencies": {
     "gatsby": "^2.18.12",
+    "gatsby-plugin-typography": "^2.3.21",
+    "gatsby-source-filesystem": "^2.1.47",
+    "gatsby-transformer-remark": "^2.6.49",
     "react": "^16.12.0",
-    "react-dom": "^16.12.0"
+    "react-dom": "^16.12.0",
+    "react-typography": "^0.16.19",
+    "styled-components": "^5.0.0",
+    "typography": "^0.16.19",
+    "typography-theme-fairy-gates": "^0.16.19",
+    "typography-theme-kirkham": "^0.16.19"
   },
   "devDependencies": {
     "gh-pages": "^2.2.0",
