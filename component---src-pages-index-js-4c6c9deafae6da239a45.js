@@ -1,0 +1,2 @@
+(window.webpackJsonp=window.webpackJsonp||[]).push([[2],{RXBc:function(n,t,e){"use strict";e.r(t);var c=e("q1tI"),i=e.n(c);t.default=function(){return i.a.createElement("div",null,"Hello git action!test")}}}]);
+//# sourceMappingURL=component---src-pages-index-js-4c6c9deafae6da239a45.js.map
