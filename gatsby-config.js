@@ -7,7 +7,7 @@
 module.exports = {
   /* Your site config here */
   siteMetadata: {
-    title: `Hawei's Blog`,
+    title: `HB`,
   },
   pathPrefix: `/hawei`,
   plugins: [
