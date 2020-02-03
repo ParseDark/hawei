@@ -33,6 +33,7 @@ const ArticlesList = ({ data }) => {
 }
 
 export default ({ data }) => {
+  console.log(data)
   return (
     <Layout>
       <h4>all of {data.allMarkdownRemark.totalCount} Posts</h4>

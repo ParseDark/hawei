@@ -7,7 +7,12 @@
 module.exports = {
   /* Your site config here */
   siteMetadata: {
-    title: `HB`,
+    title: `大可的技术屋`,
+    author: {
+      name: 'Hawei',
+      github: 'https://github.com/ParseDark',
+      juejin: 'https://juejin.im/user/5a4c68c2f265da43052f036f',
+    }
   },
   pathPrefix: `/hawei`,
   plugins: [

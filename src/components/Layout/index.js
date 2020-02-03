@@ -1,6 +1,5 @@
 import React from 'react';
 import { useStaticQuery, Link, graphql } from "gatsby"
-import Button from '../Button/index.js'
 import {
     Container,
     Header,
@@ -32,26 +31,22 @@ const Layout = ({ children }) => {
         <Container>
             <Header>
                 <WebsiteHeaderText>
-                    <h3> {data.site.siteMetadata.title} </h3> </WebsiteHeaderText>
+                    <Link to="/">
+                        <h3> {data.site.siteMetadata.title} </h3>
+                    </Link>
+                </WebsiteHeaderText>
                 <ul style={
                     { listStyle: `none`, display: 'flex' }
                 } >
-                    <ListLink to="/" > Home </ListLink>
-                    <ListLink to="/all/" > Articles </ListLink>
-                    <ListLink to="/about/" > About </ListLink>
-                    <Button> Connect </Button>
+                    <ListLink to="/allArticles/">博客</ListLink>
+                    <ListLink to="/about/">关于</ListLink>
+                    <ListLink to="/connect/">联系我</ListLink>
                 </ul>
-
             </Header >
-            <div>
-                <div>banner text</div>
-                <div>banner description</div>
-                <div>random</div>
-            </div>
             {children}
         </Container>
     )
-            }            
+}
 
 
 export default Layout;

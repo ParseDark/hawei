@@ -3,8 +3,8 @@ import { rhythm } from "../../utils/typography";
 
 export const Container = styled.div`
     margin: 0 auto;
-    max-width: 50rem;
-    padding: ${rhythm(2)};
+    max-width: 80rem;
+    padding: ${rhythm(1)};
     padding-top: ${rhythm(1.5)};
 `
 
