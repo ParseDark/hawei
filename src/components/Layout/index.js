@@ -5,6 +5,7 @@ import {
     Header,
     WebsiteHeaderText,
     LinkStyle,
+    Body,
 } from './styles.js';
 
 
@@ -43,7 +44,9 @@ const Layout = ({ children }) => {
                     <ListLink to="/connect/">联系我</ListLink>
                 </ul>
             </Header >
-            {children}
+            <Body>
+                {children}
+            </Body>
         </Container>
     )
 }

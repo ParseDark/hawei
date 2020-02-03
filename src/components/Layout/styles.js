@@ -3,7 +3,7 @@ import { rhythm } from "../../utils/typography";
 
 export const Container = styled.div`
     margin: 0 auto;
-    max-width: 80rem;
+    max-width: 70rem;
     padding: ${rhythm(1)};
     padding-top: ${rhythm(1.5)};
 `
@@ -41,4 +41,8 @@ export const LinkStyle = styled.li`
             width: 100%;
         } 
     }
+`;
+export const Body = styled.div`
+    width: 100%;
+    display: flex;
 `;

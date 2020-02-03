@@ -7,6 +7,7 @@ import Card from '../components/Card/index.js';
 import ArticlesList from '../components/RecordArticlesList/index.js';
 import Tags from '../components/Tags/index.js';
 import { unit } from '../utils/utils';
+import ArticleCard from '../components/ArticleCard/index.js';
 
 const Atver = styled.div`
     width: 5rem;
@@ -27,7 +28,7 @@ const Atver = styled.div`
     }
 `;
 
-const Container = styled.div`
+const NavContainer = styled.div`
     background: rgb(255, 255, 255);
     width: 15rem;
     display: flex;
@@ -36,7 +37,10 @@ const Container = styled.div`
     align-items: center;
     border-radius: .3rem;
     padding: 2rem 1rem;
+    height: 40rem;
 
+    position: sticky;
+    top: 1rem;    
 `;
 
 const AuthorText = styled.div`
@@ -55,6 +59,11 @@ const Icon = styled.div`
     margin: .5rem;
 `;
 
+const ArticleContainer = styled.div`
+    flex: 1;
+    margin-left: 1rem;
+`;
+
 
 
 export default ({ data }) => {
@@ -63,7 +72,7 @@ export default ({ data }) => {
 
     return (
         <Layout>
-            <Container style={{ background: '#fff', width: '15rem', display: 'flex', flexFlow: 'co' }}>
+            <NavContainer style={{ background: '#fff', width: '15rem', display: 'flex', flexFlow: 'co' }}>
                 <Atver src="avter.png" />
                 <AuthorText>
                     Hawei/大可
@@ -80,10 +89,15 @@ export default ({ data }) => {
                 <Card header="最近的帖子" key="最近的帖子">
                     <ArticlesList list={data.allMarkdownRemark.edges} />
                 </Card>
-                <Card header="系列(数据未完成)" key="系列">
+                {/* <Card header="系列(数据未完成)" key="系列">
                     <ArticlesList list={data.allMarkdownRemark.edges} />
-                </Card>
-            </Container>
+                </Card> */}
+            </NavContainer>
+            <ArticleContainer>
+                <ArticleCard>
+                    1
+                </ArticleCard>
+            </ArticleContainer>
         </Layout>
     )
 }
