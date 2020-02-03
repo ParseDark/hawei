@@ -1,1 +1,0 @@
-{"version":3,"sources":["webpack:///./src/pages/index.js"],"names":[],"mappings":"2FAAA,gCAEe,4BAAM","file":"component---src-pages-index-js-bb8f2851b19f56d63b1d.js","sourcesContent":["import React from \"react\"\n\nexport default () => <div>Hello git action!</div>\n"],"sourceRoot":""}
