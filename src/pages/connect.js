@@ -123,6 +123,7 @@ export const query = graphql`
                   title
                   date(formatString: "DD MMMM, YYYY")
                   tag
+                  banner
                 }
                 fields {
                   slug

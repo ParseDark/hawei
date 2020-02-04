@@ -2,6 +2,7 @@
 title: "Sweet Pandas Eating Sweets"
 date: "2017-08-10"
 tag: "ES6"
+banner: "https://drscdn.500px.org/photo/1010188739/q%3D80_m%3D2000/v2"
 ---
 
 Pandas are really sweet.

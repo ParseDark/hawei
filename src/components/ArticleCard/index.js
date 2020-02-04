@@ -9,7 +9,9 @@ const Container = styled.div`
 `;
 
 const ImageContainer = styled.div`
-    background: #222;
+    /* background: #222; */
+    background: url(${(props) => props.banner}) no-repeat center center;
+
     height: 18rem;
     border-radius: .5rem .5rem 0 0;
 `;
@@ -72,7 +74,9 @@ const ArticleCard = ({ list }) => {
             {
                 list.map(({ node }) => (
                     <Container>
-                        <ImageContainer />
+                        <ImageContainer banner={node.frontmatter.banner}>
+                            {/* <img alt="banner" src={node.frontmatter.banner}/> */}
+                        </ImageContainer>
                         <TextContainer>
                             <Link
                                 to={node.fields.slug} 
