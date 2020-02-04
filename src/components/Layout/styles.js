@@ -1,6 +1,6 @@
-import styled from './node_modules/styled-components';
+import styled from 'styled-components';
 import { rhythm } from "../../utils/typography";
-import "./node_modules/@fortawesome/fontawesome-free/css/all.css";
+import "@fortawesome/fontawesome-free/css/all.css";
 
 export const Container = styled.div`
     margin: 0 auto;
