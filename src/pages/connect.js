@@ -97,7 +97,6 @@ export default ({ data }) => {
         juejin,
         email,
     } = data.site.siteMetadata.author;
-    debugger
     return (
         <Layout>
             <NavContainer style={{ background: '#fff', width: '15rem', display: 'flex', flexFlow: 'co' }}>
@@ -121,10 +120,10 @@ export default ({ data }) => {
                             <i class="fa fa-envelope"></i>
                         </a>
                     </Circle>
-                    <Circle iconColor="rgb(176, 10, 24)">
-                        <Link href={email} target="__blank">
-                            <i class="fa fa-envelope"></i>
-                        </Link>
+                    <Circle iconColor="rgb(61, 108, 251)">
+                        <a href={juejin} target="__blank">
+                            <i class="fab fa-buffer"></i>
+                        </a>
                     </Circle>
                 </IconContainer>
                 <Card header="标签" key="标签">
