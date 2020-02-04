@@ -1,5 +1,5 @@
-import React from 'react';
-import { useStaticQuery, Link, graphql } from "gatsby"
+import React from './node_modules/react';
+import { useStaticQuery, Link, graphql } from "./node_modules/gatsby"
 import {
     Container,
     Header,
