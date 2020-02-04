@@ -94,9 +94,7 @@ export default ({ data }) => {
                 </Card> */}
             </NavContainer>
             <ArticleContainer>
-                <ArticleCard>
-                    1
-                </ArticleCard>
+                <ArticleCard list={data.allMarkdownRemark.edges} />
             </ArticleContainer>
         </Layout>
     )

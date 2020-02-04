@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
+import { Link } from 'gatsby';
 
 const Container = styled.div`
     background: #fff;
@@ -24,6 +25,7 @@ const Title = styled.div`
     line-height: 2.5rem;
     position: relative;
     padding: 1rem 0;
+    cursor: pointer;
 
     ::after{
         content: '';
@@ -37,6 +39,10 @@ const Title = styled.div`
         left: 0;
         margin-bottom: 1rem;
     }
+
+    :hover {
+         text-decoration: underline
+     }
 `;
 
 const Description = styled.div`
@@ -58,21 +64,31 @@ const DateText = styled.div`
     font-size: .8rem;
 `;
 
-const ArticleCard = () => {
+const ArticleCard = ({ list }) => {
+    debugger
+
     return (
         <>
             {
-                [1, 2, 3, 4, 5].map(item => (
+                list.map(({ node }) => (
                     <Container>
                         <ImageContainer />
                         <TextContainer>
-                            <Title>了解TypeScript中的任何未知内容。Never和void之间的区别</Title>
-                            <Description>在我们的项目中实现TypeScript时，我们会努力编写出最好的类型。我们可能经常会觉得使用  any  类型违反了TypeScript的目的，这是理所当然的。还有其他一些值得了解的类型，当尝试不使用任何其他类型时，例如  unknown，我们可能会发现它们很有用  。在本文中，我们[…]</Description>
+                            <Link
+                                to={node.fields.slug} 
+                            >
+                                <Title>
+                                    {node.frontmatter.title}
+                                </Title>
+                            </Link>
+                            <Description>
+                                {node.excerpt}
+                            </Description>
                         </TextContainer>
                         <ArticleFooter>
                             <Line />
                             <DateText>
-                                2020年1月27日
+                                {node.frontmatter.date}
                             </DateText>
                         </ArticleFooter>
                     </Container>
