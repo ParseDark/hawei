@@ -67,8 +67,6 @@ const DateText = styled.div`
 `;
 
 const ArticleCard = ({ list }) => {
-    debugger
-
     return (
         <>
             {
