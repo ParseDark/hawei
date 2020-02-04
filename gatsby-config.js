@@ -10,8 +10,10 @@ module.exports = {
     title: `大可的技术屋`,
     author: {
       name: 'Hawei',
+      twitter: 'https://twitter.com/DarkParse',
       github: 'https://github.com/ParseDark',
       juejin: 'https://juejin.im/user/5a4c68c2f265da43052f036f',
+      email: '13597213421@163.com'
     }
   },
   pathPrefix: `/hawei`,

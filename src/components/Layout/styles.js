@@ -1,5 +1,6 @@
 import styled from 'styled-components';
 import { rhythm } from "../../utils/typography";
+import "@fortawesome/fontawesome-free/css/all.css";
 
 export const Container = styled.div`
     margin: 0 auto;

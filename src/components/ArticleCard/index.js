@@ -74,9 +74,7 @@ const ArticleCard = ({ list }) => {
             {
                 list.map(({ node }) => (
                     <Container>
-                        <ImageContainer banner={node.frontmatter.banner}>
-                            {/* <img alt="banner" src={node.frontmatter.banner}/> */}
-                        </ImageContainer>
+                        <ImageContainer banner={node.frontmatter.banner} />
                         <TextContainer>
                             <Link
                                 to={node.fields.slug} 

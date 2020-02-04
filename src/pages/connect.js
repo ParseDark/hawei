@@ -51,12 +51,33 @@ const IconContainer = styled.div`
     display: flex;
 `;
 
-const Icon = styled.div`
+const Circle = styled.div`
     width: 2rem;
     height: 2rem;
     border-radius: 50%;
     background: rgb(238, 207, 85);
     margin: .5rem;
+    font-size: 1.2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+    transition: all .2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    
+
+    i {
+        transition: all .2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        color: #fff;
+    }
+
+    :hover {
+        background: #fff;
+    }
+
+    :hover i {
+        color: ${(props) => props.iconColor};
+        transform: scale(2);
+    }
 `;
 
 const ArticleContainer = styled.div`
@@ -70,6 +91,13 @@ export default ({ data }) => {
 
     const allTag = unit(data.allTags.edges.map(({ node }) => (node.frontmatter.tag)));
 
+    const {
+        twitter,
+        github,
+        juejin,
+        email,
+    } = data.site.siteMetadata.author;
+    debugger
     return (
         <Layout>
             <NavContainer style={{ background: '#fff', width: '15rem', display: 'flex', flexFlow: 'co' }}>
@@ -78,10 +106,26 @@ export default ({ data }) => {
                     Hawei/大可
             </AuthorText>
                 <IconContainer>
-                    <Icon />
-                    <Icon />
-                    <Icon />
-                    <Icon />
+                    <Circle iconColor="rgb(96, 153, 237)">
+                        <a href={twitter} target="__blank">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                    </Circle>
+                    <Circle iconColor="#24292e">
+                        <a href={github} target="__blank">
+                            <i class="fab fa-github-alt"></i>
+                        </a>
+                    </Circle>
+                    <Circle iconColor="rgb(176, 10, 24)">
+                        <a href={`mailto:${email}`} target="_blank">
+                            <i class="fa fa-envelope"></i>
+                        </a>
+                    </Circle>
+                    <Circle iconColor="rgb(176, 10, 24)">
+                        <Link href={email} target="__blank">
+                            <i class="fa fa-envelope"></i>
+                        </Link>
+                    </Circle>
                 </IconContainer>
                 <Card header="标签" key="标签">
                     <Tags list={allTag} />
@@ -109,6 +153,8 @@ export const query = graphql`
                     name
                     github
                     juejin
+                    twitter
+                    email
                 }
             }
 
