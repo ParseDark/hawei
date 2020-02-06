@@ -9,11 +9,12 @@ const Container = styled.div`
 `;
 
 const ImageContainer = styled.div`
-    /* background: #222; */
     background: url(${(props) => props.banner}) no-repeat center center;
-
     height: 18rem;
     border-radius: .5rem .5rem 0 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 `;
 
 const TextContainer = styled.div`
@@ -66,6 +67,20 @@ const DateText = styled.div`
     font-size: .8rem;
 `;
 
+const BanerTitle = styled.div`
+    /* background: rgba(255, 255, 255, .8); */
+    font-family: 'Oswald', sans-serif;
+    color: #000;
+    font-size: 1.5rem;
+    min-height: 8rem;
+    min-width: 60%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 20px double;
+    border-color: rgba(255, 255, 255, .8);
+`;
+
 const ArticleCard = ({ list }) => {
     return (
         <>
@@ -73,10 +88,15 @@ const ArticleCard = ({ list }) => {
                 list.map(({ node }) => (
                     <Container>
                         <ImageContainer banner={node.frontmatter.banner}>
+                            <BanerTitle>
+                                <div>
+                                    {node.frontmatter.title}
+                                </div>
+                            </BanerTitle>
                         </ImageContainer>
                         <TextContainer>
                             <Link
-                                to={node.fields.slug} 
+                                to={node.fields.slug}
                             >
                                 <Title>
                                     {node.frontmatter.title}
