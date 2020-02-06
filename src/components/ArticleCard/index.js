@@ -2,6 +2,8 @@ import React from 'react';
 import styled from 'styled-components';
 import { Link } from 'gatsby';
 
+import InterestingCard from '../InterestingCard/index';
+
 const Container = styled.div`
     background: #fff;
     border-radius: .5rem;
@@ -96,33 +98,43 @@ const ArticleCard = ({ list }) => {
         <>
             {
                 list.map(({ node }) => (
-                    <Container>
-                        <ImageContainer banner={node.frontmatter.banner}>
-                            <BanerTitle>
-                                <BannerText>
-                                    {node.frontmatter.title}
-                                </BannerText>
-                            </BanerTitle>
-                        </ImageContainer>
-                        <TextContainer>
+                    <InterestingCard perspective={2000}>
+                        < Container >
                             <Link
                                 to={node.fields.slug}
                             >
-                                <Title>
-                                    {node.frontmatter.title}
-                                </Title>
+                                {/* <InterestingCard perspective={800}> */}
+                                <ImageContainer banner={node.frontmatter.banner}>
+                                    <BanerTitle>
+                                        <BannerText>
+                                            {node.frontmatter.title}
+                                        </BannerText>
+                                    </BanerTitle>
+                                </ImageContainer>
                             </Link>
-                            <Description>
-                                {node.excerpt}
-                            </Description>
-                        </TextContainer>
-                        <ArticleFooter>
-                            <Line />
-                            <DateText>
-                                {node.frontmatter.date}
-                            </DateText>
-                        </ArticleFooter>
-                    </Container>
+                            {/* </InterestingCard> */}
+
+                            <TextContainer>
+                                <Link
+                                    to={node.fields.slug}
+                                >
+                                    <Title>
+                                        {node.frontmatter.title}
+                                    </Title>
+                                </Link>
+                                <Description>
+                                    {node.excerpt}
+                                </Description>
+                            </TextContainer>
+                            <ArticleFooter>
+                                <Line />
+                                <DateText>
+                                    {node.frontmatter.date}
+                                </DateText>
+                            </ArticleFooter>
+                        </Container>
+
+                    </InterestingCard>
                 ))
             }
         </>

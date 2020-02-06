@@ -13,19 +13,11 @@ const Atver = styled.div`
     width: 5rem;
     height: 5rem;
     border-radius: 50%;
-    background: rgb(238, 207, 85);
+    background: url(${props => props.src}) no-repeat;
+    background-size:100% 100%;
     margin: 1rem 0 2rem 0;
     position: relative;
-
-    ::before {
-        position: absolute;
-        left: 50%;
-        top: 50%;
-        transform: translate(-50%, -50%);
-        content: 'H';
-        font-size: 4rem;
-        color: #fff;
-    }
+    border: .1rem rgb(238,207,85) solid;
 `;
 
 const NavContainer = styled.div`
@@ -101,7 +93,7 @@ export default ({ data }) => {
     return (
         <Layout>
             <NavContainer>
-                <Atver src="avter.png" />
+                <Atver src="https://pbs.twimg.com/profile_images/1114797737097060354/4_HVwZNc_reasonably_small.png" />
                 <AuthorText>
                     {name}
                 </AuthorText>
