@@ -68,7 +68,7 @@ const DateText = styled.div`
 `;
 
 const BanerTitle = styled.div`
-    /* background: rgba(255, 255, 255, .8); */
+    flex-flow: column nowrap;
     font-family: 'Oswald', sans-serif;
     color: #000;
     font-size: 1.5rem;
@@ -81,6 +81,16 @@ const BanerTitle = styled.div`
     border-color: rgba(255, 255, 255, .8);
 `;
 
+const BannerText = styled.div`
+    padding: 2rem;
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: rgba(255, 255, 255, .8);
+    width: 100%;
+`;
+
 const ArticleCard = ({ list }) => {
     return (
         <>
@@ -89,9 +99,9 @@ const ArticleCard = ({ list }) => {
                     <Container>
                         <ImageContainer banner={node.frontmatter.banner}>
                             <BanerTitle>
-                                <div>
+                                <BannerText>
                                     {node.frontmatter.title}
-                                </div>
+                                </BannerText>
                             </BanerTitle>
                         </ImageContainer>
                         <TextContainer>
