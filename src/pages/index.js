@@ -37,8 +37,8 @@ const NavContainer = styled.div`
     align-items: center;
     border-radius: .3rem;
     padding: 2rem 1rem;
-    height: 40rem;
 
+    max-height: 120vh;
     position: sticky;
     top: 1rem;    
 `;
@@ -92,6 +92,7 @@ export default ({ data }) => {
     const allTag = unit(data.allTags.edges.map(({ node }) => (node.frontmatter.tag)));
 
     const {
+        name,
         twitter,
         github,
         juejin,
@@ -99,11 +100,11 @@ export default ({ data }) => {
     } = data.site.siteMetadata.author;
     return (
         <Layout>
-            <NavContainer style={{ background: '#fff', width: '15rem', display: 'flex', flexFlow: 'co' }}>
+            <NavContainer>
                 <Atver src="avter.png" />
                 <AuthorText>
-                    Hawei/大可
-            </AuthorText>
+                    {name}
+                </AuthorText>
                 <IconContainer>
                     <Circle iconColor="rgb(96, 153, 237)">
                         <a href={twitter} target="__blank">
@@ -132,9 +133,9 @@ export default ({ data }) => {
                 <Card header="最近的帖子" key="最近的帖子">
                     <ArticlesList list={data.allMarkdownRemark.edges} />
                 </Card>
-                {/* <Card header="系列(数据未完成)" key="系列">
+                <Card header="系列(数据未完成)" key="系列">
                     <ArticlesList list={data.allMarkdownRemark.edges} />
-                </Card> */}
+                </Card>
             </NavContainer>
             <ArticleContainer>
                 <ArticleCard list={data.allMarkdownRemark.edges} />
@@ -159,7 +160,7 @@ export const query = graphql`
 
          
         }
-        allMarkdownRemark {
+        allMarkdownRemark(limit: 10) {
             totalCount
             edges {
               node {
