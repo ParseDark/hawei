@@ -12,6 +12,7 @@ const Container = styled.div`
 
 const ImageContainer = styled.div`
     background: url(${(props) => props.banner}) no-repeat center center;
+    background-size: cover;
     height: 18rem;
     border-radius: .5rem .5rem 0 0;
     display: flex;
@@ -103,7 +104,6 @@ const ArticleCard = ({ list }) => {
                             <Link
                                 to={node.fields.slug}
                             >
-                                {/* <InterestingCard perspective={800}> */}
                                 <ImageContainer banner={node.frontmatter.banner}>
                                     <BanerTitle>
                                         <BannerText>
@@ -112,8 +112,6 @@ const ArticleCard = ({ list }) => {
                                     </BanerTitle>
                                 </ImageContainer>
                             </Link>
-                            {/* </InterestingCard> */}
-
                             <TextContainer>
                                 <Link
                                     to={node.fields.slug}

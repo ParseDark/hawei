@@ -39,9 +39,11 @@ const Layout = ({ children }) => {
                 <ul style={
                     { listStyle: `none`, display: 'flex' }
                 } >
-                    <ListLink to="/allArticles/">博客</ListLink>
-                    <ListLink to="/about/">关于</ListLink>
-                    <ListLink to="/connect/">联系我</ListLink>
+                    <ListLink to="/allArticles/">所有博客</ListLink>
+                    <ListLink to="/allArticles/">标签</ListLink>
+                    <ListLink to="/allArticles/">系列</ListLink>
+                    <ListLink to="/about/">关于大可</ListLink>
+                    <ListLink to="/connect/">call他</ListLink>
                 </ul>
             </Header >
             <Body>
