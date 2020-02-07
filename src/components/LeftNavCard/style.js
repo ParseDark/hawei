@@ -13,7 +13,7 @@ export const Atver = styled.div`
 
 export const NavContainer = styled.div`
     background: rgb(255, 255, 255);
-    width: 15rem;
+    min-width: 15rem;
     display: flex;
     flex-flow: column;
     justify-content: center;

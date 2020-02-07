@@ -5,8 +5,6 @@ tag: "ES6"
 banner: "https://desk-fd.zol-img.com.cn/t_s960x600c5/g2/M00/04/0B/ChMlWl0-oHmIDZvqAAdz3RsOKEYAAMMNwPQhEkAB3P1417.jpg"
 ---
 
-# 基于node-fetch二次封装
-
 背景：项目中我们使用koa2作为静态资源+转发代理服务器.前端react.
 
 冲突：后端对于某些业务逻辑执着于状态返回500/400， 而不是使用统一的错误码， 我们又必须拿到错误信息.
