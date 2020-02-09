@@ -13,7 +13,7 @@ const Container = styled.div`
 const ImageContainer = styled.div`
     background: url(${(props) => props.banner}) no-repeat center center;
     background-size: cover;
-    height: 18rem;
+    height: 15rem;
     border-radius: .5rem .5rem 0 0;
     display: flex;
     justify-content: center;
@@ -27,7 +27,7 @@ const TextContainer = styled.div`
 `;
 
 const Title = styled.div`
-    font-size: 2rem;
+    font-size: 1rem;
     line-height: 2.5rem;
     position: relative;
     padding: 1rem 0;
@@ -75,13 +75,18 @@ const BanerTitle = styled.div`
     font-family: 'Oswald', sans-serif;
     color: #000;
     font-size: 1.5rem;
-    min-height: 8rem;
+    height: 50%;
     min-width: 60%;
     display: flex;
     justify-content: center;
     align-items: center;
-    border: 20px double;
+    border: .5rem double;
     border-color: rgba(255, 255, 255, .8);
+    margin: 1rem;
+
+    @media (max-width: 800px) {
+        display: none;
+    }
 `;
 
 const BannerText = styled.div`
@@ -92,6 +97,7 @@ const BannerText = styled.div`
     align-items: center;
     background: rgba(255, 255, 255, .8);
     width: 100%;
+    font-size: 1rem;
 `;
 
 const ArticleCard = ({ list }) => {

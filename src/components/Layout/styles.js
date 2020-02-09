@@ -7,12 +7,16 @@ export const Container = styled.div`
     max-width: 70rem;
     padding: ${rhythm(1)};
     padding-top: ${rhythm(1.5)};
-`
+`;
 
 export const Header = styled.header`
     margin-bottom: 1.5rem;
     display: flex;
     justify-content: space-between;
+
+    @media (max-width: 800px) {
+        flex-flow: column nowrap;
+    }
 `;
 
 export const WebsiteHeaderText = styled.div`
@@ -32,9 +36,6 @@ export const LinkStyle = styled.li`
         width: 0;
         display: flex;
         transition: all .2s;
-        position: absolute;
-        transform: translate(-50%, 0);
-        left: 50%;
     };
 
     :hover{
@@ -46,4 +47,14 @@ export const LinkStyle = styled.li`
 export const Body = styled.div`
     width: 100%;
     display: flex;
+`;
+
+export const UlBox = styled.ul`
+    list-style: none;
+    display: flex ;
+
+    /* 媒体查询：在屏幕小余600px的宽度下显示以下样式 */
+    @media (max-width: 800px) {
+        flex-flow: column nowrap;
+    }
 `;

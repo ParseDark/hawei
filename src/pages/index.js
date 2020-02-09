@@ -11,17 +11,25 @@ const ArticleContainer = styled.div`
     margin-left: 1rem;
 `;
 
+const AuthorInfo = styled.div`
+   @media (max-width: 800px) {
+      display: none;
+    }
+`;
+
 
 
 export default ({ data }) => {
-    return (
-        <Layout>
-            <LeftNavCard data={data}/>
-            <ArticleContainer>
-                <ArticleCard list={data.allMarkdownRemark.edges} />
-            </ArticleContainer>
-        </Layout>
-    )
+  return (
+    <Layout>
+      <AuthorInfo>
+        <LeftNavCard data={data} />
+      </AuthorInfo>
+      <ArticleContainer>
+        <ArticleCard list={data.allMarkdownRemark.edges} />
+      </ArticleContainer>
+    </Layout>
+  )
 }
 
 export const query = graphql`
