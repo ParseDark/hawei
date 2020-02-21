@@ -13,10 +13,6 @@ export const Header = styled.header`
     margin-bottom: 1.5rem;
     display: flex;
     justify-content: space-between;
-
-    @media (max-width: 800px) {
-        flex-flow: column nowrap;
-    }
 `;
 
 export const WebsiteHeaderText = styled.div`
@@ -53,8 +49,15 @@ export const UlBox = styled.ul`
     list-style: none;
     display: flex ;
 
-    /* 媒体查询：在屏幕小余600px的宽度下显示以下样式 */
     @media (max-width: 800px) {
-        flex-flow: column nowrap;
+        display: none;
     }
 `;
+
+export const BreadMenuContainer = styled.div`
+    display: none;
+
+    @media (max-width: 800px) {
+        display: inline-block;
+    }
+`
