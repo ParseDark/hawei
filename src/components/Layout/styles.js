@@ -4,7 +4,7 @@ import "@fortawesome/fontawesome-free/css/all.css";
 
 export const Container = styled.div`
     margin: 0 auto;
-    max-width: 70rem;
+    max-width: 60rem;
     padding: ${rhythm(1)};
     padding-top: ${rhythm(1.5)};
 `;
