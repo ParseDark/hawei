@@ -2,9 +2,12 @@ import React from 'react';
 import Layout from '../components/Layout/index.js';
 import { graphql } from "gatsby"
 import styled from 'styled-components';
+import { connect } from 'react-redux';
 
 import ArticleCard from '../components/ArticleCard/index.js';
 import LeftNavCard from '../components/LeftNavCard/index.js';
+
+import { toggleDarkMode } from '../state/app';
 
 const ArticleContainer = styled.div`
     flex: 1;
@@ -17,9 +20,9 @@ const AuthorInfo = styled.div`
     }
 `;
 
-
-
-export default ({ data }) => {
+const Index = ({ data, isDarkMode, dispatch }) => {
+  debugger
+  console.log(isDarkMode, dispatch)
   return (
     <Layout>
       <AuthorInfo>
@@ -31,6 +34,11 @@ export default ({ data }) => {
     </Layout>
   )
 }
+
+
+export default connect(state => ({
+  isDarkMode: state.app.isDarkMode
+}), null)(Index);
 
 export const query = graphql`
   query {
