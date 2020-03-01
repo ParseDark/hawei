@@ -23,14 +23,16 @@ const AuthorInfo = styled.div`
 const Index = ({ data, isDarkMode, dispatch }) => {
   console.log(isDarkMode, dispatch)
   return (
-    <Layout>
-      <AuthorInfo>
-        <LeftNavCard data={data} />
-      </AuthorInfo>
-      <ArticleContainer>
-        <ArticleCard list={data.allMarkdownRemark.edges} />
-      </ArticleContainer>
-    </Layout>
+    <>
+      {/* <Layout> */}
+        <AuthorInfo>
+          <LeftNavCard data={data} />
+        </AuthorInfo>
+        <ArticleContainer>
+          <ArticleCard list={data.allMarkdownRemark.edges} />
+        </ArticleContainer>
+      {/* </Layout> */}
+    </>
   )
 }
 

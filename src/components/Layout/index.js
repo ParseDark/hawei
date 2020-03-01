@@ -43,7 +43,7 @@ const Layout = ({ children }) => {
                 </WebsiteHeaderText>
                 <UlBox>
                     <ListLink to="/allArticles/">所有博客</ListLink>
-                    <ListLink to="/allArticles/">标签</ListLink>
+                    <ListLink to="/tags/">标签</ListLink>
                     <ListLink to="/allArticles/">系列</ListLink>
                     <ListLink to="/about/">关于大可</ListLink>
                     <ListLink to="/connect/">call他</ListLink>
