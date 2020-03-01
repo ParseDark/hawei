@@ -15,9 +15,9 @@ const ArticleContainer = styled.div`
 `;
 
 const AuthorInfo = styled.div`
-   /* @media (max-width: 800px) {
+   @media (max-width: 800px) {
       display: none;
-    } */
+    }
 `;
 
 const Index = ({ data, isDarkMode, dispatch }) => {

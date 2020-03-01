@@ -18,6 +18,7 @@ module.exports = {
   },
   pathPrefix: `/hawei`,
   plugins: [
+    `gatsby-plugin-styled-components`,
     {
       resolve: `gatsby-source-filesystem`,
       options: {

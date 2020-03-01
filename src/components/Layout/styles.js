@@ -49,15 +49,15 @@ export const UlBox = styled.ul`
     list-style: none;
     display: flex ;
 
-    /* @media (max-width: 800px) {
+    @media (max-width: 800px) {
         display: none;
-    } */
+    }
 `;
 
 export const BreadMenuContainer = styled.div`
     display: none;
-/* 
+
     @media (max-width: 800px) {
         display: inline-block;
-    } */
+    }
 `
