@@ -18,7 +18,6 @@ const InterestingCard = ({ children, perspective }) => {
 
         //获取鼠标到中心的位置距离
         //e.page指鼠标到banner到边缘的位置
-        // debugger
         var deltaX = e.clientX - centerX;
         var deltaY = e.clientY - centerY;
 

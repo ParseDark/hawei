@@ -21,7 +21,6 @@ const AuthorInfo = styled.div`
 `;
 
 const Index = ({ data, isDarkMode, dispatch }) => {
-  debugger
   console.log(isDarkMode, dispatch)
   return (
     <Layout>
