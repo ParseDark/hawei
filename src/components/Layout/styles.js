@@ -21,6 +21,10 @@ export const WebsiteHeaderText = styled.div`
     display: flex; 
 `;
 
+export const activeLink = {
+    borderBottom: '3px solid rgb(238,207,85)',
+};
+
 export const LinkStyle = styled.li`
     text-transform: uppercase;
     margin-right: ${rhythm(1.5)};
@@ -28,7 +32,7 @@ export const LinkStyle = styled.li`
 
     ::after{
         content: '';
-        border-bottom: 3px solid #333;
+        border-bottom: 3px solid ${props => props.activeColor || 'rgb(238,207,85)'};
         width: 0;
         display: flex;
         transition: all .2s;

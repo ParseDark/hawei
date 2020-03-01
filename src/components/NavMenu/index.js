@@ -22,11 +22,6 @@ const NavMenu = () => {
     const menuConfig = [
         {
             url: '/allArticles/',
-            title: '所有博客',
-            icon: <i class="fa fa-newspaper"></i>,
-        },
-        {
-            url: '/allArticles/',
             title: '标签',
             icon: <i class="fa fa-tags"></i>,
         },

@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
 import { useStaticQuery, Link, graphql } from "gatsby"
+import 'pace-progressbar';
+import 'pace-progressbar/themes/blue/pace-theme-minimal.css';
 import NavMenu from '../NavMenu/index.js';
 import {
     Container,
@@ -9,13 +11,14 @@ import {
     Body,
     UlBox,
     BreadMenuContainer,
+    activeLink,
 } from './styles.js';
 import Drawer from '../Drawer/index.js';
 
 // 文章布局， 带导航栏
 const ListLink = props => (
-    <LinkStyle >
-        <Link to={props.to} > {props.children} </Link>
+    <LinkStyle>
+        <Link activeStyle={activeLink} to={props.to} > {props.children} </Link>
     </LinkStyle >
 )
 
@@ -42,11 +45,10 @@ const Layout = ({ children }) => {
                     </Link>
                 </WebsiteHeaderText>
                 <UlBox>
-                    <ListLink to="/allArticles/">所有博客</ListLink>
                     <ListLink to="/tags/">标签</ListLink>
                     <ListLink to="/allArticles/">系列</ListLink>
-                    <ListLink to="/about/">关于大可</ListLink>
                     <ListLink to="/connect/">call他</ListLink>
+                    <ListLink to="/about/">关于大可</ListLink>
                 </UlBox>
                 <BreadMenuContainer>
                     <i class="fas fa-bars" onClick={() => { setNavMenuStatus(true); }}></i>
