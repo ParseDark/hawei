@@ -84,9 +84,9 @@ const BanerTitle = styled.div`
     border-color: rgba(255, 255, 255, .8);
     margin: 1rem;
 
-    @media (max-width: 800px) {
+    /* @media (max-width: 800px) {
         display: none;
-    }
+    } */
 `;
 
 const BannerText = styled.div`
