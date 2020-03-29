@@ -14,12 +14,12 @@ const TagsContainer = styled.div`
 `;
 
 
-const Tags = ({ list }) => {
+const Tags = ({ list, clickEvent }) => {
     return (
         <TagsContainer>
             {
                 list.map(item => (
-                    <Tag>{item}</Tag>
+                    <Tag onClick={() => (clickEvent && clickEvent(item))} >{item}</Tag>
                 ))
             }
         </TagsContainer>

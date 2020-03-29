@@ -21,7 +21,12 @@ const NavItem = styled.div`
 const NavMenu = () => {
     const menuConfig = [
         {
-            url: '/allArticles/',
+            url: '/',
+            title: '首页',
+            icon: <i class="fa fa-tags"></i>,
+        },
+        {
+            url: '/tags/',
             title: '标签',
             icon: <i class="fa fa-tags"></i>,
         },
@@ -31,7 +36,7 @@ const NavMenu = () => {
             icon: <i class="fab fa-cube"></i>,
         },
         {
-            url: '/allArticles/',
+            url: '/about/',
             title: '关于大可',
             icon: <i class="fab fa-connectdevelop"></i>,
         },
