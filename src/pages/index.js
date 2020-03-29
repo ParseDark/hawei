@@ -1,6 +1,6 @@
 import React from "react"
 import Layout from "../components/Layout/index.js"
-import { graphql } from "gatsby"
+import { graphql, useStaticQuery } from "gatsby"
 import styled from "styled-components"
 import { connect } from "react-redux"
 
@@ -20,77 +20,35 @@ const AuthorInfo = styled.div`
   }
 `
 
-const Index = ({ data, isDarkMode, dispatch }) => {
-  console.log(isDarkMode, dispatch)
+const Index = ({ data, isDarkMode, dispatch, articles }) => {
+  console.log(isDarkMode, dispatch);
   return (
     <>
       <Layout>
         <AuthorInfo>
-          <LeftNavCard data={data} />
+          {/* <LeftNavCard data={data} /> */}
         </AuthorInfo>
         <ArticleContainer>
-          <ArticleCard list={data.allMarkdownRemark.edges} />
+          <ArticleCard list={articles} />
         </ArticleContainer>
       </Layout>
     </>
   )
 }
 
-export default connect(
-  state => ({
-    isDarkMode: state.app.isDarkMode,
-  }),
-  null
-)(Index)
+const mapDispatchToProps = null
 
-export const query = graphql`
-  query {
-    site {
-      siteMetadata {
-        title
-        author {
-          name
-          github
-          juejin
-          twitter
-          email
-        }
-      }
-    }
-    allMarkdownRemark(limit: 10) {
-      totalCount
-      edges {
-        node {
-          id
-          frontmatter {
-            title
-            date(formatString: "DD MMMM, YYYY")
-            tag
-            banner
-          }
-          fields {
-            slug
-          }
-          excerpt
-        }
-      }
-    }
-    allTags: allMarkdownRemark(filter: { frontmatter: { tag: { ne: null } } }) {
-      totalCount
-      edges {
-        node {
-          id
-          excerpt
-          frontmatter {
-            tag
-            title
-            date(formatString: "DD MMMM, YYYY")
-          }
-          fields {
-            slug
-          }
-        }
-      }
-    }
+
+const mapStateToProps = (state, ownProps) => {
+  return {
+    ...ownProps,
+    isDarkMode: state.app.isDarkMode,
+    articles: state._allArticles.articles,
   }
-`
+}
+
+
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps,
+)(Index)

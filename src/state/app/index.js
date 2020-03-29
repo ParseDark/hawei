@@ -8,6 +8,7 @@ export const toggleDarkMode = isDarkMode => ({
   isDarkMode,
 })
 
+// reducer
 export default (state = initialState, action) => {
   switch (action.type) {
     case TOOGLE_DARKMODE:

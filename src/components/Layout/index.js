@@ -1,5 +1,6 @@
 import React, { useState } from "react"
-import { useStaticQuery, Link, graphql } from "gatsby"
+import { Link, graphql, useStaticQuery } from "gatsby"
+import { connect } from 'react-redux'
 import NavMenu from "../NavMenu/index.js"
 import {
   Container,
@@ -11,6 +12,7 @@ import {
   BreadMenuContainer,
   activeLink,
 } from "./styles.js"
+import { setArticles } from '../../state/allArticles/index'
 import Drawer from "../Drawer/index.js"
 
 // 文章布局， 带导航栏
@@ -23,19 +25,47 @@ const ListLink = props => (
   </LinkStyle>
 )
 
-const Layout = ({ children }) => {
+const Layout = (props) => {
+  const { children, setAllArticles } = props;
   const [navMenuStatus, setNavMenuStatus] = useState(false)
   const data = useStaticQuery(
     graphql`
-      query {
-        site {
-          siteMetadata {
-            title
+    query {
+      site {
+        siteMetadata {
+          title
+          author {
+            name
+            github
+            juejin
+            twitter
+            email
           }
         }
       }
+      allMarkdownRemark(limit: 10) {
+        totalCount
+        edges {
+          node {
+            id
+            frontmatter {
+              title
+              date(formatString: "DD MMMM, YYYY")
+              tag
+              banner
+            }
+            fields {
+              slug
+            }
+            excerpt
+          }
+        }
+      }
+    }
     `
   )
+  setAllArticles(data.allMarkdownRemark.edges)
+
   return (
     <Container>
       <Header>
@@ -71,4 +101,26 @@ const Layout = ({ children }) => {
   )
 }
 
-export default Layout
+const mapDispatchToProps = dispatch => {
+  return {
+    setAllArticles: articles => {
+      dispatch(setArticles(articles))
+    },
+  }
+}
+
+
+const mapStateToProps = (state, ownProps) => {
+  return {
+    ...ownProps,
+    articles: state._allArticles.articles,
+  }
+}
+
+const ConnectLayout = connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(Layout)
+
+export default ConnectLayout;
+
