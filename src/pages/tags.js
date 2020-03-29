@@ -1,27 +1,29 @@
-import React from 'react';
-import { graphql, useStaticQuery } from "gatsby";
-import styled from 'styled-components';
-import Layout from '../components/layout/index.js';
-import Tags from '../components/Tags/index.js';
-import { unit } from '../utils/utils';
+import React from "react"
+import { graphql, useStaticQuery } from "gatsby"
+import styled from "styled-components"
+import Layout from "../components/layout/index.js"
+import Tags from "../components/Tags/index.js"
+import { unit } from "../utils/utils"
 
 const TagsTitle = styled.h3`
   width: 100%;
   padding: 1rem 0;
-  border-bottom: 1px solid #C8C8C8;
+  border-bottom: 1px solid #c8c8c8;
   display: inline;
-`;
+`
 
 const Container = styled.div`
   width: 100%;
   display: flex;
   flex-flow: column;
-`;
+`
 
 export default ({ data }) => {
-  const allTag = unit(data.allTags.edges.map(({ node }) => (node.frontmatter.tag)));
+  const allTag = unit(
+    data.allTags.edges.map(({ node }) => node.frontmatter.tag)
+  )
 
-  const onClickTag = (tag) => {
+  const onClickTag = tag => {
     debugger
   }
 
@@ -32,7 +34,7 @@ export default ({ data }) => {
         <Tags list={allTag} clickEvent={onClickTag} />
       </Container>
     </Layout>
-  );
+  )
 }
 
 export const query = graphql`
@@ -42,7 +44,7 @@ export const query = graphql`
         title
       }
     }
-    allTags:   allMarkdownRemark(filter: {frontmatter: {tag: {ne: null}}}) {
+    allTags: allMarkdownRemark(filter: { frontmatter: { tag: { ne: null } } }) {
       totalCount
       edges {
         node {
@@ -54,7 +56,7 @@ export const query = graphql`
             date(formatString: "DD MMMM, YYYY")
           }
           fields {
-              slug
+            slug
           }
         }
       }

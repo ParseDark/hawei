@@ -1,13 +1,13 @@
 import React from "react"
 import { graphql } from "gatsby"
-import styled from 'styled-components';
-import Layout from "../components/layout/index.js";
-import "./style.css";
+import styled from "styled-components"
+import Layout from "../components/layout/index.js"
+import "./style.css"
 
 const Container = styled.div`
   width: 100%;
   overflow: auto;
-`;
+`
 
 export default ({ data }) => {
   const post = data.markdownRemark
