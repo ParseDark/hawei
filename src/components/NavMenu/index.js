@@ -23,7 +23,7 @@ const NavMenu = () => {
     {
       url: "/",
       title: "首页",
-      icon: <i class="fa fa-tags"></i>,
+      icon: <i class="fa fa-home"></i>,
     },
     {
       url: "/tags/",
@@ -33,7 +33,7 @@ const NavMenu = () => {
     {
       url: "/allArticles/",
       title: "系列",
-      icon: <i class="fab fa-cube"></i>,
+      icon: <i class="fas fa-book"></i>,
     },
     {
       url: "/about/",
