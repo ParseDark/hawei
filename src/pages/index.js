@@ -1,6 +1,5 @@
 import React from "react"
 import Layout from "../components/Layout/index.js"
-import { graphql, useStaticQuery } from "gatsby"
 import styled from "styled-components"
 import { connect } from "react-redux"
 

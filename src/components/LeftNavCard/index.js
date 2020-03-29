@@ -7,9 +7,9 @@ import { unit } from "../../utils/utils"
 import ArticlesList from "../RecordArticlesList/index.js"
 
 
-const LeftNavCard = ({ data, allTags }) => {
+const LeftNavCard = ({ allTags, authorInfo, articles }) => {
 
-  const { name, twitter, github, juejin, email } = data.site.siteMetadata.author
+  const { name, twitter, github, juejin, email } = authorInfo
 
   return (
     <NavContainer>
@@ -41,10 +41,10 @@ const LeftNavCard = ({ data, allTags }) => {
         <Tags list={allTags} />
       </Card>
       <Card header="最近的帖子" key="最近的帖子">
-        <ArticlesList list={data.allTags.edges} />
+        <ArticlesList list={articles} />
       </Card>
       {/* <Card header="系列(数据未完成)" key="系列">
-                <ArticlesList list={data.allTags.edges} />
+                <ArticlesList list={articles} />
             </Card> */}
     </NavContainer>
   )
@@ -57,6 +57,7 @@ const mapStateToProps = (state, ownProps) => {
     ...ownProps,
     articles: state._allArticles.articles,
     allTags: state._allArticles.articles.map(({ node }) => (node.frontmatter.tag)),
+    authorInfo: state._siteMeta.authorInfo,
   }
 }
 

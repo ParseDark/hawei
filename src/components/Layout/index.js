@@ -13,6 +13,7 @@ import {
   activeLink,
 } from "./styles.js"
 import { setArticles } from '../../state/allArticles/index'
+import { setAuthorInfo } from '../../state/siteMeta/index'
 import Drawer from "../Drawer/index.js"
 
 // 文章布局， 带导航栏
@@ -65,6 +66,7 @@ const Layout = (props) => {
     `
   )
   setAllArticles(data.allMarkdownRemark.edges)
+  setAuthorInfo(data.site.siteMetadata.author)
 
   return (
     <Container>
@@ -106,6 +108,9 @@ const mapDispatchToProps = dispatch => {
     setAllArticles: articles => {
       dispatch(setArticles(articles))
     },
+    setAuthorInfo: authorInfo => {
+      dispatch(setAuthorInfo(authorInfo))
+    }
   }
 }
 
