@@ -1,14 +1,13 @@
 import React from "react"
+import { connect } from "react-redux";
 import { NavContainer, Atver, AuthorText, IconContainer, Circle } from "./style"
 import Card from "../Card/index.js"
 import Tags from "../Tags/index.js"
 import { unit } from "../../utils/utils"
 import ArticlesList from "../RecordArticlesList/index.js"
 
-const LeftNavCard = ({ data }) => {
-  const allTag = unit(
-    data.allTags.edges.map(({ node }) => node.frontmatter.tag)
-  )
+
+const LeftNavCard = ({ data, allTags }) => {
 
   const { name, twitter, github, juejin, email } = data.site.siteMetadata.author
 
@@ -39,7 +38,7 @@ const LeftNavCard = ({ data }) => {
         </Circle>
       </IconContainer>
       <Card header="标签" key="标签">
-        <Tags list={allTag} />
+        <Tags list={allTags} />
       </Card>
       <Card header="最近的帖子" key="最近的帖子">
         <ArticlesList list={data.allTags.edges} />
@@ -51,4 +50,19 @@ const LeftNavCard = ({ data }) => {
   )
 }
 
-export default LeftNavCard
+const mapDispatchToProps = null;
+
+const mapStateToProps = (state, ownProps) => {
+  return {
+    ...ownProps,
+    articles: state._allArticles.articles,
+    allTags: state._allArticles.articles.map(({ node }) => (node.frontmatter.tag)),
+  }
+}
+
+const Connected = connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(LeftNavCard)
+
+export default Connected;

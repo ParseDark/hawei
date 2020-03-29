@@ -26,7 +26,7 @@ const Index = ({ data, isDarkMode, dispatch, articles }) => {
     <>
       <Layout>
         <AuthorInfo>
-          {/* <LeftNavCard data={data} /> */}
+          <LeftNavCard data={data} />
         </AuthorInfo>
         <ArticleContainer>
           <ArticleCard list={articles} />

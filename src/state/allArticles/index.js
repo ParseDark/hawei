@@ -1,10 +1,9 @@
-
-
 export const NAMESPACE = 'allArticles/list'
 
 // state
 const initialState = {
     articles: [],
+    articlesTags: [],
 }
 
 // action
