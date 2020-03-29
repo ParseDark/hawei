@@ -1,7 +1,5 @@
 import React, { useState } from "react"
 import { useStaticQuery, Link, graphql } from "gatsby"
-import "pace-progressbar"
-import "pace-progressbar/themes/blue/pace-theme-minimal.css"
 import NavMenu from "../NavMenu/index.js"
 import {
   Container,
