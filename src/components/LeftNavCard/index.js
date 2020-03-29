@@ -25,7 +25,7 @@ const LeftNavCard = ({ data }) => {
 
     return (
         <NavContainer>
-            <Atver src="https://pbs.twimg.com/profile_images/1114797737097060354/4_HVwZNc_reasonably_small.png" />
+            <Atver src="https://user-gold-cdn.xitu.io/2020/3/15/170de4a08538606c?imageView2/1/w/180/h/180/q/85/format/webp/interlace/1" />
             <AuthorText>
                 {name}
             </AuthorText>
