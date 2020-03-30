@@ -1,0 +1,2 @@
+(window.webpackJsonp=window.webpackJsonp||[]).push([[3],{"3XHS":function(n,t,e){"use strict";e.r(t);var a=e("q1tI"),i=e.n(a),l=e("vOnD"),o=e("Syei"),u=e("Zttt"),w=l.a.div.withConfig({displayName:"about__Contaner",componentId:"bbwwjd-0"})(["width:100%;"]);t.default=function(n){n.data;return i.a.createElement(u.a,null,i.a.createElement(w,null,i.a.createElement(o.a,null)))}}}]);
+//# sourceMappingURL=component---src-pages-about-js-e0b9c7db8297eff912c2.js.map
