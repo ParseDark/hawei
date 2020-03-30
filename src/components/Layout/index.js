@@ -64,7 +64,8 @@ const Layout = (props) => {
       }
     }
     `
-  )
+  );
+  debugger
   setAllArticles(data.allMarkdownRemark.edges)
   setAuthorInfo(data.site.siteMetadata.author)
 
