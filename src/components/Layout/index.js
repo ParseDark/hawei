@@ -27,7 +27,7 @@ const ListLink = props => (
 )
 
 const Layout = (props) => {
-  const { children, setAllArticles } = props;
+  const { children, setAllArticles, setAuthor } = props;
   const [navMenuStatus, setNavMenuStatus] = useState(false)
   const data = useStaticQuery(
     graphql`
@@ -65,9 +65,8 @@ const Layout = (props) => {
     }
     `
   );
-  debugger
+  setAuthor(data.site.siteMetadata.author)
   setAllArticles(data.allMarkdownRemark.edges)
-  setAuthorInfo(data.site.siteMetadata.author)
 
   return (
     <Container>
@@ -109,7 +108,7 @@ const mapDispatchToProps = dispatch => {
     setAllArticles: articles => {
       dispatch(setArticles(articles))
     },
-    setAuthorInfo: authorInfo => {
+    setAuthor: authorInfo => {
       dispatch(setAuthorInfo(authorInfo))
     }
   }

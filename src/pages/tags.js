@@ -24,7 +24,6 @@ export default ({ data }) => {
   )
 
   const onClickTag = tag => {
-    debugger
   }
 
   return (

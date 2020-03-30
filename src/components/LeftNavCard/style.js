@@ -1,5 +1,12 @@
 import styled from "styled-components"
 
+
+export const AvtarContainer = styled.div`
+  display: flex;
+  flex-flow: column;
+  justify-content: center;
+`;
+
 export const Atver = styled.div`
   width: 5rem;
   height: 5rem;
@@ -13,7 +20,7 @@ export const Atver = styled.div`
 
 export const NavContainer = styled.div`
   background: rgb(255, 255, 255);
-  min-width: 15rem;
+  max-width: 15rem;
   display: flex;
   flex-flow: column;
   justify-content: center;
@@ -21,7 +28,7 @@ export const NavContainer = styled.div`
   border-radius: 0.3rem;
   padding: 2rem 1rem;
 
-  max-height: 90vh;
+  min-height: 90vh;
   position: sticky;
   top: 1rem;
 

@@ -19,13 +19,13 @@ const AuthorInfo = styled.div`
   }
 `
 
-const Index = ({ data, isDarkMode, dispatch, articles }) => {
+const Index = ({ isDarkMode, dispatch, articles, authorInfo }) => {
   console.log(isDarkMode, dispatch);
   return (
     <>
       <Layout>
         <AuthorInfo>
-          <LeftNavCard data={data} />
+          <LeftNavCard />
         </AuthorInfo>
         <ArticleContainer>
           <ArticleCard list={articles} />
@@ -43,6 +43,7 @@ const mapStateToProps = (state, ownProps) => {
     ...ownProps,
     isDarkMode: state.app.isDarkMode,
     articles: state._allArticles.articles,
+    authorInfo: state._siteMeta.authorInfo,
   }
 }
 
